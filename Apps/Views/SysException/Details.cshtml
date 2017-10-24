@@ -1,12 +1,11 @@
-﻿@model Apps.Models.Sys.SysLogModel
+﻿@model Apps.Models.Sys.SysExceptionModel
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
-
 }
-
 <script type="text/javascript">
     $(function () {
+
         $("#btnReturn").click(function () {
             window.parent.frameReturnByClose();
         });
@@ -20,48 +19,68 @@
     </a>
 </div>
 
+@*<div id="ErrMesList">
+        <div id="ErrMesListContent">
+            @Html.ValidationSummary(false)
+        </div>
+    </div>*@
 <table class="form_table setinput355">
     <tbody>
         <tr>
             <th>
-                @Html.LabelFor(model => model.Operator)
+                @Html.LabelFor(model => model.HelpLink)
             </th>
             <td>
-                @Html.DisplayFor(model => model.Operator)
+                @Html.DisplayFor(model => model.HelpLink)
             </td>
         </tr>
+
         <tr>
             <th>
                 @Html.LabelFor(model => model.Message)
             </th>
             <td>
-                @Html.DisplayFor(model => model.Message, new { @style = "height:100px;" })
+                @Html.DisplayFor(model => model.Message, new { @style = "height:100px;width:550px" })
             </td>
         </tr>
+
         <tr>
             <th>
-                @Html.LabelFor(model => model.Result)
+                @Html.LabelFor(model => model.Source)
             </th>
             <td>
-                @Html.DisplayFor(model => model.Result)
+                @Html.DisplayFor(model => model.Source)
             </td>
         </tr>
+
         <tr>
             <th>
-                @Html.LabelFor(model => model.Type)
+                @Html.LabelFor(model => model.StackTrace)
             </th>
             <td>
-                @Html.DisplayFor(model => model.Type)
+
+                @Html.DisplayFor(model => model.StackTrace, new { @style = "height:100px;width:550px" })
             </td>
         </tr>
+
         <tr>
             <th>
-                @Html.LabelFor(model => model.Module)
+                @Html.LabelFor(model => model.TargetSite)
             </th>
             <td>
-                @Html.DisplayFor(model => model.Module)
+                @Html.DisplayFor(model => model.TargetSite, new { @style = "height:100px;width:550px" })
             </td>
         </tr>
+
+        <tr>
+            <th>
+                @Html.LabelFor(model => model.Data)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Data)
+            </td>
+        </tr>
+
         <tr>
             <th>
                 @Html.LabelFor(model => model.CreateTime)
@@ -70,6 +89,7 @@
                 @Html.DisplayFor(model => model.CreateTime)
             </td>
         </tr>
+
     </tbody>
 </table>
 
