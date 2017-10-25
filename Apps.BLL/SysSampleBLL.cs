@@ -1,4 +1,5 @@
-﻿using Apps.Common;
+﻿using Apps.BLL.Core;
+using Apps.Common;
 using Apps.DAL;
 using Apps.IBLL;
 using Apps.IDAL;
@@ -103,6 +104,49 @@ namespace Apps.BLL
         /// <param name="errors">持久的错误信息</param>
         /// <param name="model">模型</param>
         /// <returns>是否成功</returns>
+        /// <summary>
+        /// 创建一个实体
+        /// </summary>
+        /// <param name="errors">持久的错误信息</param>
+        /// <param name="model">模型</param>
+        /// <returns>是否成功</returns>
+        public bool Create(ref ValidationErrors errors, SysSampleModel model)
+        {
+            try
+            {
+                SysSample entity = Rep.GetById(model.Id);
+                if (entity != null)
+                {
+                    errors.Add("主键重复");
+                    return false;
+                }
+                entity = new SysSample();
+                entity.Id = model.Id;
+                entity.Name = model.Name;
+                entity.Age = model.Age;
+                entity.Bir = model.Bir;
+                entity.Photo = model.Photo;
+                entity.Note = model.Note;
+                entity.CreateTime = model.CreateTime;
+
+                if (Rep.Create(entity) == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    errors.Add("插入失败");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                errors.Add(ex.Message);
+                ExceptionHander.WriteException(ex);
+                return false;
+            }
+        }
+
         public bool Create(SysSampleModel model)
         {
             try

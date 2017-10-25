@@ -159,6 +159,11 @@
     <Compile Include="Controllers\SysExceptionController.cs" />
     <Compile Include="Controllers\SysLogController.cs" />
     <Compile Include="Controllers\SysSampleController.cs" />
+    <Compile Include="Core\BaseController.cs" />
+    <Compile Include="Core\BaseException.cs" />
+    <Compile Include="Core\ExtendMvcHtml.cs" />
+    <Compile Include="Core\LogHandler.cs" />
+    <Compile Include="Core\ToJsonResult.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1594,6 +1599,7 @@
     <Content Include="Views\SysLog\Details.cshtml" />
     <Content Include="Views\SysException\Index.cshtml" />
     <Content Include="Views\SysException\Details.cshtml" />
+    <Content Include="Views\SysException\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1625,9 +1631,17 @@
       <Project>{41e68e14-2d5f-418d-946c-a152856ff0a4}</Project>
       <Name>Apps.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Apps.DAL\Apps.DAL.csproj">
+      <Project>{CA60A1EC-97D2-41F3-85C8-6E18569B2DDE}</Project>
+      <Name>Apps.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Apps.IBLL\Apps.IBLL.csproj">
       <Project>{323FB8CF-2BAA-4864-A18C-0558F2D31A0B}</Project>
       <Name>Apps.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Apps.IDAL\Apps.IDAL.csproj">
+      <Project>{6E85AEB7-BECF-42F4-8DC8-2108275AB658}</Project>
+      <Name>Apps.IDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Apps.Models\Apps.Models.csproj">
       <Project>{bdc5ed62-3ef3-4488-9a27-c57ec68ddc5d}</Project>

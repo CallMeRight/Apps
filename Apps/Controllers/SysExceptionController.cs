@@ -2,6 +2,7 @@
 using Apps.IBLL;
 using Apps.Models;
 using Apps.Models.Sys;
+using Apps.Web.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,5 +70,12 @@ namespace Apps.Web.Controllers
         }
 
         #endregion
+
+        public ActionResult Error()
+        {
+            BaseException ex = new BaseException();
+            return View(ex);
+        }
+
     }
 }

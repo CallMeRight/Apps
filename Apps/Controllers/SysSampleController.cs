@@ -2,6 +2,7 @@
 using Apps.Common;
 using Apps.IBLL;
 using Apps.Models.Sys;
+using Apps.Web.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,10 @@ using Unity.Attributes;
 
 namespace Apps.Web.Controllers
 {
-    public class SysSampleController : Controller
+    public class SysSampleController : BaseController
     {
-        //
+        ValidationErrors errors = new ValidationErrors();
+
         // GET: /SysSample/
         /// <summary>
         /// 业务层注入
@@ -61,15 +63,16 @@ namespace Apps.Web.Controllers
         [HttpPost]
         public JsonResult Create(SysSampleModel model)
         {
-
-
-            if (m_BLL.Create(model))
+            if (m_BLL.Create(ref errors, model))
             {
-                return Json(1, JsonRequestBehavior.AllowGet);
+                LogHandler.WriteServiceLog("虚拟用户", "Id:" + model.Id + ",Name:" + model.Name, "成功", "创建", "样例程序");
+                return Json(JsonHandler.CreateMessage(1, "插入成功"), JsonRequestBehavior.AllowGet);
             }
             else
             {
-                return Json(0, JsonRequestBehavior.AllowGet);
+                string ErrorCol = errors.Error;
+                LogHandler.WriteServiceLog("虚拟用户", "Id:" + model.Id + ",Name:" + model.Name + "," + ErrorCol, "失败", "创建", "样例程序");
+                return Json(JsonHandler.CreateMessage(0, "插入失败" + ErrorCol), JsonRequestBehavior.AllowGet);
             }
 
         }
