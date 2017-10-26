@@ -54,6 +54,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountBLL.cs" />
+    <Compile Include="BaseBLL.cs" />
     <Compile Include="Core\ExceptionHander.cs" />
     <Compile Include="HomeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

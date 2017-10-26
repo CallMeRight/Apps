@@ -27,6 +27,9 @@ namespace Apps.Core
 
             container.RegisterType<ISysExceptionBLL, SysExceptionBLL>();
             container.RegisterType<ISysExceptionRepository, SysExceptionRepository>();
+
+            container.RegisterType<IAccountBLL, AccountBLL>();
+            container.RegisterType<IAccountRepository, AccountRepository>();
         }
     }
 }

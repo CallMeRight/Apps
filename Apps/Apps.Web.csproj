@@ -164,6 +164,9 @@
     <Compile Include="Core\ExtendMvcHtml.cs" />
     <Compile Include="Core\LogHandler.cs" />
     <Compile Include="Core\ToJsonResult.cs" />
+    <Compile Include="Core\verify_code.ashx.cs">
+      <DependentUpon>verify_code.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -696,6 +699,7 @@
     <Content Include="Content\Images\sunny\未标题-1.psd" />
     <Content Include="Content\themes\material\images\Thumbs.db" />
     <Content Include="Content\themes\blue\images\Thumbs.db" />
+    <Content Include="Core\verify_code.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\home.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
