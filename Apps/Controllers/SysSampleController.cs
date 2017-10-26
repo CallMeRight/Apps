@@ -24,7 +24,6 @@ namespace Apps.Web.Controllers
         public ISysSampleBLL m_BLL { get; set; }
         public ActionResult Index()
         {
-
             return View();
         }
 
