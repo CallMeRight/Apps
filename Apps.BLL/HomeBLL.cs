@@ -10,13 +10,13 @@ using Unity.Attributes;
 
 namespace Apps.BLL
 {
-    public class HomeBLL: IHomeBLL
+    public class HomeBLL : IHomeBLL
     {
         [Dependency]
         public IHomeRepository HomeRepository { get; set; }
-        public List<SysModule> GetMenuByPersonId(string moduleId)
+        public List<SysModule> GetMenuByPersonId(string personId, string moduleId)
         {
-            return HomeRepository.GetMenuByPersonId(moduleId);
+            return HomeRepository.GetMenuByPersonId(personId, moduleId);
         }
     }
 }

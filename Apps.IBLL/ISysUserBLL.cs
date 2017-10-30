@@ -1,4 +1,4 @@
-﻿using Apps.Models;
+﻿using Apps.Models.Sys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Apps.IBLL
 {
-    public interface IHomeBLL
+    public interface ISysUserBLL
     {
-        List<SysModule> GetMenuByPersonId(string personId, string moduleId);
+        List<permModel> GetPermission(string accountid, string controller);
     }
 }

@@ -54,6 +54,7 @@ namespace Apps.Web.Controllers
         }
 
         #region 创建
+        [SupportFilter]
         public ActionResult Create()
         {
             return View();
