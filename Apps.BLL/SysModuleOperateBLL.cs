@@ -15,8 +15,6 @@ namespace Apps.BLL
 {
     public class SysModuleOperateBLL : BaseBLL, ISysModuleOperateBLL
     {
-        DBContainer db = new DBContainer();
-
         [Dependency]
         public ISysModuleOperateRepository m_Rep { get; set; }
 

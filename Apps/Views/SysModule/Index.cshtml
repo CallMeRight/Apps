@@ -4,7 +4,8 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Index_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Index_Layout.cshtml";
+    Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
 
     List<permModel> perm = (List<permModel>)ViewBag.Perm;
     if (perm == null)
