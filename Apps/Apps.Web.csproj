@@ -159,6 +159,7 @@
     <Compile Include="Controllers\SysExceptionController.cs" />
     <Compile Include="Controllers\SysLogController.cs" />
     <Compile Include="Controllers\SysModuleController.cs" />
+    <Compile Include="Controllers\SysRightController.cs" />
     <Compile Include="Controllers\SysRoleController.cs" />
     <Compile Include="Controllers\SysSampleController.cs" />
     <Compile Include="Core\BaseController.cs" />
@@ -1613,6 +1614,7 @@
     <Content Include="Views\SysModule\CreateOpt.cshtml" />
     <Content Include="Views\SysRole\Index.cshtml" />
     <Content Include="Views\Shared\_Partial_AutoGrid.cshtml" />
+    <Content Include="Views\SysRight\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

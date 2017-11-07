@@ -17,6 +17,7 @@ namespace Apps.Web.Controllers
         public ISysRoleBLL m_BLL { get; set; }
         ValidationErrors errors = new ValidationErrors();
 
+        [SupportFilter]
         // GET: SysRole
         public ActionResult Index()
         {
